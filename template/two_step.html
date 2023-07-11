@@ -1,0 +1,41 @@
+
+<html>
+    <head>
+        <title>2-Step Binomial Tree Option Pricing</title>
+        <style>
+            h1{
+                background-color: red;
+                color: white;
+                padding: 20px;
+                font-size: 50px;
+                text-align:center;
+                border:6px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>2-Step Binomial Tree Option Price Calculator</h1>
+
+        <form action="/two_step_option_price_without/" method="get">
+            Spot Price:   <input type="number" required = "required" step = "any" name="S"><br>
+            Strike Price:    <input type="number" required = "required" step = "any" name="K"><br>
+            Risk-Free Rate:  <input type="number" required = "required" step = "any" name="r">(in percentage)<br>
+            Up Factor: <input type="number" required = "required" step = "any" name="u"><br>
+            Down Factor: <input type="number"required = "required" step = "any" name="d"><br>
+            Time to Maturity:<input type="number" required = "required" step = "any" name="T"><br>
+            <label>Select Option Type</label>
+            <select name = "op_code">
+                <option value = "CALL">CALL</option>
+                <option value = "PUT">PUT</option>
+            </select><br><br>
+            <input type="submit" value="Calculate Option Price"><br>
+            
+
+        </form>
+        {% if option_price %}
+        <p>Option Price: {{option_price}}</p>
+        {% endif %}
+        
+        <a href="/">Home</a>
+    </body>   
+</html>
